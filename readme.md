@@ -15,10 +15,9 @@ Topology
 The Red Team Group will be assigned IP network ID’s to be able to access a penetration testing web server, Damn Vulnerable Web Application. Once the Red Team Group has their IP’s, they will be able to log into the server with ssh key and by user names set up by RedAdmin, the system administrator for the Red Team Group. If accessed from a different work station, The RTG’s Firewall will not allow non listed ip’s into the server, the user will not be granted access due to the RTG’s firewall configuration.  
 VM’s on the internal network are not exposed to the public and must be logged in by ssh to private key, since the web Server VM’s do not have a public facing IP, The private IP’s must be used from the jump box to be able to modify or make changes to a specific webserver. The Elk server will be monitoring all the instances of the webservers, and must be able to access the Webservers by private IP’s of the internal network; these changes can be made In the Install_Elk.cfg file in the Ansible directory inside the Docker Container. The elk server is only accessible in the Container inside the jumpBox.
 
+![Access_table](Images/Access_Table.png)
+
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
-
-
-![Access Table](Images/Access_table.png)
 
 If the servers should go down, the network is supported by a load balancer that will keep the web application operating should the server be overloaded and no longer be accessible. All web traffic flows through this load balancer through port 80, and traffic is guided by a public front end IP.  The webservers do not have a public IP and are only accessed through Private IP addresses only. This Load balancer has two other redundant servers, should one fail, two more can take its place while the down server is being fixed. To make setup of these 3 webservers speedy and efficient, the System Administrator has access to an Ansible JumpBox Provionser. 
 
