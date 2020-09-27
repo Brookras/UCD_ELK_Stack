@@ -32,6 +32,7 @@ Ansible jumpBox is used to make updates from script files to configure multiple 
 -	Sudo docker start peaceful_colden
 -	Sudo docker attach peaceful_colden
 
+
 ![Docker_ps_output](Images/Docker_ps_output.png)
 
 ![Network_Access](Images/Network_Access.png)
@@ -43,7 +44,8 @@ Elk Configuration
 In order to make sure nothing major is changed in the network, or to watch for suspicious behavior, we have an ELK (Elastic, Logstash, Kibana) server that will monitor web traffic across the three servers, this is to make sure that who belong on the network are the ones with authorized access. If an unauthorized user gains access to the RTG’s network, The elk server will be able to monitor and report malicious changes to the server and system logs. Filebeat collects data about the file system, such as changes to accounts, sudo attempts, denied, success, and user log data. MetricBeat collects machine metrics, such as cpu usage, memory, inbound/outbound traffic transfer. These will help visualize areas of concern when a breach is suspected.
 Ansible is used to setup and configure the Elk Machine, the elk server setup is managed using scripts, Ansible allows for quick deployment should the server go down down or need to be replaced, the scripts will have it setup in minutes, rather than having to type everything out manually. Once the scripts have successfully ran, the elk server should be running, the following screenshot displays the results of running docker ps, showing the elk instance has been installed and running. 
 
-![Docker_ps_output1](Images/Docker_ps_ouput1.png)
+
+![Docker_ps_output1](Images/Docker_ps_output1.png)
 
 Installing Playbooks
 
